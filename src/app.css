@@ -22,3 +22,27 @@ body{
     font-size: 20px;
     font-weight: 300;
 }
+
+.car-item{
+    display: flex;
+    border: 1px solid lightgray;
+    margin: 10px;
+}
+
+.car-item .left{
+    width: 100px;
+}
+
+.car-item .left img{
+    width: 100px;
+}
+
+.car-item .right{
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.car-item .right h4,
+.car-item .right h6{
+    margin: 0;
+}
