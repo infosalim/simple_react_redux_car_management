@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { carDetail } from '../actions';
+import { carDetail, clearDetail } from '../actions';
 import { bindActionCreators } from 'redux';
 
 class Car extends Component {
@@ -10,7 +10,9 @@ class Car extends Component {
         this.props.carDetail(this.props.match.params.id)
     }
 
-
+    componentWillUnmount(){
+        this.props.clearDetail();
+    }
 
     renderDetail = ({detail}) => {
         if(detail){
@@ -42,14 +44,14 @@ class Car extends Component {
 
 
 function mapStateToProps(state){
-    console.log(state);
+    // console.log(state);
     return{
         cars: state.cars
     }
 }
 
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({carDetail}, dispatch);
+    return bindActionCreators({carDetail, clearDetail}, dispatch);
 }
 
 

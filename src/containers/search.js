@@ -21,9 +21,9 @@ class Search extends Component {
         event.preventDefault();
         this.props.getCars(this.state.keyword);
     }
-    componentDidMount() {
-        console.log(this.state);
-    }
+    // componentDidMount() {
+    //     console.log(this.state);
+    // }
 
     render() {
         return (
